@@ -55,7 +55,7 @@ if not license_key:
     st.stop() # Halts code execution completely until they enter a key
 
 if license_key not in VALID_CLIENT_LICENSES:
-    st.sidebar.error(" Invalid License Key. Access Denied.")
+    st.sidebar.error("❌ Invalid License Key. Access Denied.")
     st.stop() # Halts code execution if the key is incorrect
 
 # Load verified client operational identity dynamically
@@ -77,7 +77,7 @@ def calibrate_and_ingest_dataset(uploaded_file):
             # Handles modern .xlsx and older legacy .xls formats seamlessly
             df = pd.read_excel(uploaded_file, engine='openpyxl')
     except Exception as e:
-        st.error(f" Critical System Ingestion Error: Failed to parse spreadsheet structure. Details: {str(e)}")
+        st.error(f"⚠️ Critical System Ingestion Error: Failed to parse spreadsheet structure. Details: {str(e)}")
         return None, []
 
     # Comprehensive Global Mapping Dictionary for Nigerian Retail Software Output Variations
@@ -154,18 +154,46 @@ uploaded_file = st.sidebar.file_uploader(
 )
 
 # ==============================================================================
-# 5. RUNTIME PORTAL ROUTER
+# 5. RUNTIME PORTAL ROUTER & MULTI-BRANCH ENGINE
 # ==============================================================================
 if uploaded_file is not None:
     # Process and calibrate file upload contents immediately via memory cache
     df_clean, validation_failures = calibrate_and_ingest_dataset(uploaded_file)
     
     if len(validation_failures) > 0 or df_clean is None:
-        st.sidebar.error(f" Structural Validation Failed. Missing parameters: {validation_failures}")
+        st.sidebar.error(f"❌ Structural Validation Failed. Missing parameters: {validation_failures}")
     else:
-        st.sidebar.success(f" Secure Channel: {client_corporate_name}")
+        st.sidebar.success(f"✅ Secure Channel Authenticated")
+        
+        # --- MULTI-LOCATION ARCHITECTURE DETECTOR ---
+        # Automatically checks if the incoming file has a 'Branch', 'Location', or 'Store' column
+        location_variants = ['Branch', 'Location', 'Store', 'Branch_Location', 'STORE']
+        detected_location_col = None
+        
+        for variant in location_variants:
+            if variant in df_clean.columns:
+                df_clean = df_clean.rename(columns={variant: 'Branch_Location'})
+                detected_location_col = 'Branch_Location'
+                break
+        
+        # If the file contains branch data, build a dynamic Headquarters Filter Panel
+        if detected_location_col:
+            st.sidebar.markdown("---")
+            st.sidebar.subheader("🏢 Headquarters Control")
+            unique_branches = ["All Corporate Locations"] + list(df_clean['Branch_Location'].unique())
+            selected_branch = st.sidebar.selectbox("Select Target Branch Filter", unique_branches)
+            
+            # Filter the master dataframe dynamically based on executive selection
+            if selected_branch != "All Corporate Locations":
+                df_clean = df_clean[df_clean['Branch_Location'] == selected_branch].reset_index(drop=True)
+                branch_title_suffix = f" - [{selected_branch}]"
+            else:
+                branch_title_suffix = " - [Consolidated Corporate Enterprise]"
+        else:
+            branch_title_suffix = ""
         
         # Operational Navigation Panel
+        st.sidebar.markdown("---")
         active_portal = st.sidebar.radio(
             "Select Executive Intelligence Desk",
             ["CEO Portfolio Financial Monitor", "Pharma & Grocery Inflow Guard"]
@@ -175,8 +203,8 @@ if uploaded_file is not None:
         # PORTAL 1: CEO PORTFOLIO FINANCIAL MONITOR
         # ----------------------------------------------------------------------
         if active_portal == "CEO Portfolio Financial Monitor":
-            st.title(f" {client_corporate_name}")
-            st.caption("Consolidated analytical overview of commercial metrics, asset velocities, and cross-department margin distributions.")
+            st.title(f"🏢 {client_corporate_name}{branch_title_suffix}")
+            st.caption("Consolidated analytical overview of cross-department commercial metrics, branch asset velocities, and gross margin distributions.")
             st.markdown("---")
             
             # Aggregate Financial Core KPI Computations
@@ -187,7 +215,7 @@ if uploaded_file is not None:
             
             # High-Visibility FinTech KPI Status Row
             kpi1, kpi2, kpi3, kpi4 = st.columns(4)
-            kpi1.metric("Gross Portfolio Revenue", f"₦{total_revenue:,.2f}")
+            kpi1.metric("Gross Revenue Pool", f"₦{total_revenue:,.2f}")
             kpi2.metric("Cost of Goods Sold (COGS)", f"₦{total_cogs:,.2f}")
             kpi3.metric("Net Gross Profit Pool", f"₦{total_profit:,.2f}")
             kpi4.metric("Blended Operating Margin", f"{blended_margin:.2f}%")
@@ -197,7 +225,7 @@ if uploaded_file is not None:
             graph_left, graph_right = st.columns([2, 1])
             
             with graph_left:
-                st.subheader("Daily Revenue Velocity vs Net Gross Margin Trend")
+                st.subheader("Revenue Velocity vs Net Gross Margin Trend")
                 df_clean['Timestamp'] = pd.to_datetime(df_clean['Timestamp'] if 'Timestamp' in df_clean.columns else pd.date_range(start='2026-05-01', periods=len(df_clean)))
                 timeline_data = df_clean.groupby(df_clean['Timestamp'].dt.date)[['Revenue', 'Gross_Profit']].sum().reset_index()
                 
@@ -224,9 +252,13 @@ if uploaded_file is not None:
                 st.plotly_chart(fig_share, use_container_width=True)
                 
             # Real-Time Ledger Audit Table Panel
-            st.subheader(" Dynamic System Reconciliation Ledger")
+            st.subheader("🔍 Dynamic System Reconciliation Ledger")
+            display_cols = ['Product_Name', 'Category', 'Cost_Price', 'Selling_Price', 'Quantity_Sold', 'Revenue', 'Gross_Profit', 'Current_Stock_Level']
+            if detected_location_col:
+                display_cols.insert(0, 'Branch_Location')
+                
             st.dataframe(
-                df_clean[['Product_Name', 'Category', 'Cost_Price', 'Selling_Price', 'Quantity_Sold', 'Revenue', 'Gross_Profit', 'Current_Stock_Level']].style.format({
+                df_clean[display_cols].style.format({
                     "Cost_Price": "₦{:,.2f}",
                     "Selling_Price": "₦{:,.2f}",
                     "Revenue": "₦{:,.2f}",
@@ -239,8 +271,8 @@ if uploaded_file is not None:
         # PORTAL 2: PHARMA & GROCERY INFLOW GUARD
         # ----------------------------------------------------------------------
         elif active_portal == "Pharma & Grocery Inflow Guard":
-            st.title("Replenishment Logistics & Procurement Guard Station")
-            st.caption("Automated stock tracking triggers evaluating shelf drain rates to protect operating margins.")
+            st.title(f"Replenishment Logistics Station {branch_title_suffix}")
+            st.caption("Automated stock tracking triggers evaluating shelf drain rates across locations to protect operating margins.")
             st.markdown("---")
             
             # Format boundaries to prevent indexing calculation failure states
@@ -252,20 +284,24 @@ if uploaded_file is not None:
             if not reorder_df.empty:
                 # Calculate required restock depth automatically
                 reorder_df['Target_Order_Volume'] = reorder_df.apply(
-                    lambda row: int(row['Required_Restock_Units']) if 'Required_Restock_Units' in reorder_df.columns 
+                    lambda row: int(row['Required_Restock_Units']) if 'Required_Restock_Units' in df_clean.columns 
                     else int(150 - row['Current_Stock_Level']), axis=1
                 )
                 
                 # Check for critical out-of-stock items (0 units left)
                 absolute_depleted = reorder_df[reorder_df['Current_Stock_Level'] == 0]
                 if not absolute_depleted.empty:
-                    st.error(f"🔴 CRITICAL REVENUE RISK: Exactly {len(absolute_depleted)} essential items have completely hit ZERO on the shelves. Reorder cycles must be executed immediately to prevent loss of customer lifetime value.")
+                    st.error(f"🔴 CRITICAL REVENUE RISK: Exactly {len(absolute_depleted)} essential items have completely hit ZERO on the shelves. Reorder cycles must be executed immediately.")
                 else:
-                    st.warning(f" REPLENISHMENT WARNING: Exactly {len(reorder_df)} line items have drained below the designated safety buffer threshold.")
+                    st.warning(f"⚠️ REPLENISHMENT WARNING: Exactly {len(reorder_df)} line items have drained below the designated safety buffer threshold.")
                 
                 # Render the clean, structured Procurement Table
-                st.subheader(" Procurement Action Order Ledger")
-                summary_view = reorder_df.groupby(['Category', 'Product_Name', 'Current_Stock_Level', 'Reorder_Level', 'Target_Order_Volume']).size().reset_index().drop(columns=[0])
+                st.subheader("📋 Procurement Action Order Ledger")
+                groupby_fields = ['Category', 'Product_Name', 'Current_Stock_Level', 'Reorder_Level', 'Target_Order_Volume']
+                if detected_location_col:
+                    groupby_fields.insert(0, 'Branch_Location')
+                    
+                summary_view = reorder_df.groupby(groupby_fields).size().reset_index().drop(columns=[0])
                 st.dataframe(
                     summary_view.style.format({
                         "Current_Stock_Level": "{:,.0f} units on shelf",
@@ -279,22 +315,25 @@ if uploaded_file is not None:
             st.markdown("---")
             
             # High-Impact Stock Velocity Graph Panels
-            st.subheader(" Cross-Department Shelf Movement Velocity Index")
-            velocity_data = df_clean.groupby(['Category', 'Product_Name'])['Quantity_Sold'].sum().reset_index()
+            st.subheader("📈 Shelf Movement Velocity Index")
+            groupby_vel = ['Category', 'Product_Name']
+            if detected_location_col:
+                groupby_vel.insert(0, 'Branch_Location')
+                
+            velocity_data = df_clean.groupby(groupby_vel)['Quantity_Sold'].sum().reset_index()
             velocity_data = velocity_data.sort_values(by='Quantity_Sold', ascending=False).reset_index(drop=True)
-            velocity_data.columns = ['Department / Category', 'Product Unit Identifier (SKU)', 'Total Volume Dispatched MTD']
             
             col_graph, col_table = st.columns([1, 1])
             with col_table:
                 st.markdown("**Top 10 Fast-Moving SKUs**")
                 st.dataframe(
-                    velocity_data.head(10).style.format({"Total Volume Dispatched MTD": "{:,.0f} items sold"}),
+                    velocity_data.head(10).style.format({"Quantity_Sold": "{:,.0f} units sold"}),
                     use_container_width=True
                 )
             with col_graph:
                 st.markdown("**Visual Velocity Metric Graph**")
                 fig_velocity = px.bar(
-                    velocity_data.head(10), x='Total Volume Dispatched MTD', y='Product Unit Identifier (SKU)',
+                    velocity_data.head(10), x='Quantity_Sold', y='Product_Name',
                     orientation='h', template='plotly_dark', color_discrete_sequence=['#00ff88']
                 )
                 fig_velocity.update_layout(
@@ -305,9 +344,9 @@ if uploaded_file is not None:
 
 else:
     # High-Performance Welcome Initialization Screen (Shown after valid login but before upload)
-    st.title(f" Portal Initialized")
+    st.title(f"👋 Portal Initialized")
     st.subheader(f"Account: {client_corporate_name}")
     st.caption("Enterprise Financial & Inventory Decision Middleware Engine")
     st.markdown("---")
     
-    st.info(" Terminal Connected. Please utilize the Data Ingestion Portal in the sidebar to upload your inventory spreadsheet (.xlsx, .xls, or .csv). Your analytics dashboard environment will load instantly.")
+    st.info("📊 Terminal Connected. Please utilize the Data Ingestion Portal in the sidebar to upload your inventory spreadsheet (.xlsx, .xls, or .csv). Your analytics dashboard environment will load instantly.")
