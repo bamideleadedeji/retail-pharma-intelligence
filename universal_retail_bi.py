@@ -146,7 +146,7 @@ def calibrate_and_ingest_dataset(uploaded_file):
 # 4. INTERACTIVE SIDEBAR CONTROL MODULE
 # ==============================================================================
 st.sidebar.markdown("---")
-st.sidebar.subheader(" Data Ingestion Portal")
+st.sidebar.subheader("📥 Data Ingestion Portal")
 uploaded_file = st.sidebar.file_uploader(
     "Upload Corporate Inventory Report", 
     type=["csv", "xlsx", "xls"], 
