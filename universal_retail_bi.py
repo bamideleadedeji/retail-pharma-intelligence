@@ -26,7 +26,43 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 2. UNIVERSAL PLUG-AND-PLAY INTERFACE (EXCEL & CSV MULTI-FORMAT ENGINE)
+# 2. ENTERPRISE SECURITY GATE & MULTI-TENANT ACCESS KEYS
+# ==============================================================================
+# Secure dictionary storing authorized corporate client portal configurations
+VALID_CLIENT_LICENSES = {
+    "FC-IBADAN-798": "FoodCo Hub | Ibadan Corporate Branch",
+    "MEDPLUS-PHARMA-2026": "Medplus Pharmacy | Regional Depot",
+    "AWENIX-NIG-LTD": "Awenix Nig Ltd | Enterprise Portal"
+}
+
+st.sidebar.title("🔑 Enterprise Authentication")
+license_key = st.sidebar.text_input("Enter Corporate License Key", type="password")
+
+if not license_key:
+    st.title("🛡️ Universal Intelligence AI Platform")
+    st.caption("Enterprise Financial & Inventory Decision Middleware Engine")
+    st.markdown("---")
+    st.info("🔒 Secure Server Gateway Active. Please input your authorized Corporate License Key in the sidebar terminal to initialize your customized retail metrics environment.")
+    
+    # Professional Blueprint Compliance Container visible before login
+    with st.expander("🛡️ Platform Compliance & Operational Specifications"):
+        st.markdown("""
+        ### Universal Adaptation Layer System Capabilities:
+        * **Multi-Engine File Decoder:** Out-of-the-box native processing for Excel (`.xlsx`, `.xls`) using `openpyxl` alongside traditional flat text `.csv` formats.
+        * **Automated Header Mapping Dictionary:** Programmatically matches, translates, and normalizes disparate software conventions (`Stock_On_Hand`, `Quantity`, `Qty Available`, `SP`, `Unit Price`, etc.) into a uniform ledger framework.
+        * **Secure Real-Time Isolation:** Fully hosted execution structure where client operational values are parsed dynamically in active instance memory context without secondary cloud persistence vulnerabilities.
+        """)
+    st.stop() # Halts code execution completely until they enter a key
+
+if license_key not in VALID_CLIENT_LICENSES:
+    st.sidebar.error(" Invalid License Key. Access Denied.")
+    st.stop() # Halts code execution if the key is incorrect
+
+# Load verified client operational identity dynamically
+client_corporate_name = VALID_CLIENT_LICENSES[license_key]
+
+# ==============================================================================
+# 3. UNIVERSAL PLUG-AND-PLAY INTERFACE (EXCEL & CSV MULTI-FORMAT ENGINE)
 # ==============================================================================
 def calibrate_and_ingest_dataset(uploaded_file):
     """
@@ -107,12 +143,9 @@ def calibrate_and_ingest_dataset(uploaded_file):
     return df, missing_fields
 
 # ==============================================================================
-# 3. INTERACTIVE SIDEBAR MASTER PANEL
+# 4. INTERACTIVE SIDEBAR CONTROL MODULE
 # ==============================================================================
-st.sidebar.title("🛡️ UniversalIntelligence")
-st.sidebar.caption("Hybrid Retail Middleware Engine // v3.0 Pro")
 st.sidebar.markdown("---")
-
 st.sidebar.subheader(" Data Ingestion Portal")
 uploaded_file = st.sidebar.file_uploader(
     "Upload Corporate Inventory Report", 
@@ -121,7 +154,7 @@ uploaded_file = st.sidebar.file_uploader(
 )
 
 # ==============================================================================
-# 4. RUNTIME DISPATCHER LOGIC
+# 5. RUNTIME PORTAL ROUTER
 # ==============================================================================
 if uploaded_file is not None:
     # Process and calibrate file upload contents immediately via memory cache
@@ -130,7 +163,7 @@ if uploaded_file is not None:
     if len(validation_failures) > 0 or df_clean is None:
         st.sidebar.error(f" Structural Validation Failed. Missing parameters: {validation_failures}")
     else:
-        st.sidebar.success(" System Architecture Calibrated & Aligned!")
+        st.sidebar.success(f" Secure Channel: {client_corporate_name}")
         
         # Operational Navigation Panel
         active_portal = st.sidebar.radio(
@@ -142,7 +175,7 @@ if uploaded_file is not None:
         # PORTAL 1: CEO PORTFOLIO FINANCIAL MONITOR
         # ----------------------------------------------------------------------
         if active_portal == "CEO Portfolio Financial Monitor":
-            st.title("Enterprise Hybrid Hub | Executive Performance Dashboard")
+            st.title(f" {client_corporate_name}")
             st.caption("Consolidated analytical overview of commercial metrics, asset velocities, and cross-department margin distributions.")
             st.markdown("---")
             
@@ -271,18 +304,10 @@ if uploaded_file is not None:
                 st.plotly_chart(fig_velocity, use_container_width=True)
 
 else:
-    # High-Performance Welcome Initialization Screen
-    st.title(" Universal Intelligence AI Platform")
+    # High-Performance Welcome Initialization Screen (Shown after valid login but before upload)
+    st.title(f" Portal Initialized")
+    st.subheader(f"Account: {client_corporate_name}")
     st.caption("Enterprise Financial & Inventory Decision Middleware Engine")
     st.markdown("---")
     
-    st.info(" System Ready, Consultant Bamidele. Please utilize the Data Ingestion Portal in the sidebar to upload your client's inventory Excel spreadsheet or CSV stream. The engine will instantly normalize column mappings and initiate real-time analytics dashboards.")
-    
-    # Executive Blueprint Compliance Expandable Container Box
-    with st.expander("🛡️ Platform Compliance & Operational Specifications"):
-        st.markdown("""
-        ### Universal Adaptation Layer System Capabilities:
-        * **Multi-Engine File Decoder:** Out-of-the-box native processing for Excel (`.xlsx`, `.xls`) using `openpyxl` alongside traditional flat text `.csv` formats.
-        * **Automated Header Mapping Dictionary:** Programmatically matches, translates, and normalizes disparate software conventions (`Stock_On_Hand`, `Quantity`, `Qty Available`, `SP`, `Unit Price`, etc.) into a uniform ledger framework.
-        * **Secure Real-Time Isolation:** Fully hosted execution structure where client operational values are parsed dynamically in active instance memory context without secondary cloud persistence vulnerabilities.
-        """)
+    st.info(" Terminal Connected. Please utilize the Data Ingestion Portal in the sidebar to upload your inventory spreadsheet (.xlsx, .xls, or .csv). Your analytics dashboard environment will load instantly.")
