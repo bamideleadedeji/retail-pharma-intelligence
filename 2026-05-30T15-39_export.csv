@@ -1,0 +1,257 @@
+﻿,Category,Product_Name,Current_Stock_Level,Reorder_Level,Required_Restock_Units
+0,Beverages & Chillers,Coca-Cola 50cl,3,40,147
+1,Beverages & Chillers,Coca-Cola 50cl,8,40,142
+2,Beverages & Chillers,Coca-Cola 50cl,13,40,137
+3,Beverages & Chillers,Coca-Cola 50cl,14,40,136
+4,Beverages & Chillers,Coca-Cola 50cl,17,40,133
+5,Beverages & Chillers,Coca-Cola 50cl,23,40,127
+6,Beverages & Chillers,Coca-Cola 50cl,28,40,122
+7,Beverages & Chillers,Coca-Cola 50cl,33,40,117
+8,Beverages & Chillers,Coca-Cola 50cl,37,40,113
+9,Beverages & Chillers,Coca-Cola 50cl,39,40,111
+10,Beverages & Chillers,Eva Water 75cl,16,40,134
+11,Beverages & Chillers,Eva Water 75cl,20,40,130
+12,Beverages & Chillers,Eva Water 75cl,31,40,119
+13,Beverages & Chillers,Eva Water 75cl,32,40,118
+14,Beverages & Chillers,Eva Water 75cl,34,40,116
+15,Beverages & Chillers,Eva Water 75cl,35,40,115
+16,Beverages & Chillers,Eva Water 75cl,36,40,114
+17,Beverages & Chillers,Hollandia Yoghurt 1L,0,40,150
+18,Beverages & Chillers,Hollandia Yoghurt 1L,2,40,148
+19,Beverages & Chillers,Hollandia Yoghurt 1L,9,40,141
+20,Beverages & Chillers,Hollandia Yoghurt 1L,20,40,130
+21,Beverages & Chillers,Hollandia Yoghurt 1L,28,40,122
+22,Beverages & Chillers,Hollandia Yoghurt 1L,31,40,119
+23,Beverages & Chillers,Hollandia Yoghurt 1L,32,40,118
+24,Beverages & Chillers,Hollandia Yoghurt 1L,36,40,114
+25,Beverages & Chillers,Hollandia Yoghurt 1L,37,40,113
+26,Beverages & Chillers,Hollandia Yoghurt 1L,39,40,111
+27,Beverages & Chillers,Malta Guinness 33cl,15,40,135
+28,Beverages & Chillers,Malta Guinness 33cl,16,40,134
+29,Beverages & Chillers,Malta Guinness 33cl,26,40,124
+30,Beverages & Chillers,Malta Guinness 33cl,27,40,123
+31,Beverages & Chillers,Malta Guinness 33cl,30,40,120
+32,Beverages & Chillers,Malta Guinness 33cl,31,40,119
+33,FMCG / Provisions,Dano Milk Refill,3,40,147
+34,FMCG / Provisions,Dano Milk Refill,4,40,146
+35,FMCG / Provisions,Dano Milk Refill,5,40,145
+36,FMCG / Provisions,Dano Milk Refill,6,40,144
+37,FMCG / Provisions,Dano Milk Refill,9,40,141
+38,FMCG / Provisions,Dano Milk Refill,11,40,139
+39,FMCG / Provisions,Dano Milk Refill,12,40,138
+40,FMCG / Provisions,Dano Milk Refill,16,40,134
+41,FMCG / Provisions,Dano Milk Refill,27,40,123
+42,FMCG / Provisions,Dano Milk Refill,28,40,122
+43,FMCG / Provisions,Dano Milk Refill,30,40,120
+44,FMCG / Provisions,Dano Milk Refill,31,40,119
+45,FMCG / Provisions,Dano Milk Refill,33,40,117
+46,FMCG / Provisions,Dano Milk Refill,34,40,116
+47,FMCG / Provisions,Dano Milk Refill,37,40,113
+48,FMCG / Provisions,Milo 400g,13,40,137
+49,FMCG / Provisions,Milo 400g,19,40,131
+50,FMCG / Provisions,Milo 400g,21,40,129
+51,FMCG / Provisions,Milo 400g,24,40,126
+52,FMCG / Provisions,Milo 400g,26,40,124
+53,FMCG / Provisions,Milo 400g,29,40,121
+54,FMCG / Provisions,Milo 400g,30,40,120
+55,FMCG / Provisions,Milo 400g,35,40,115
+56,FMCG / Provisions,Peak Milk 400g,0,40,150
+57,FMCG / Provisions,Peak Milk 400g,8,40,142
+58,FMCG / Provisions,Peak Milk 400g,15,40,135
+59,FMCG / Provisions,Peak Milk 400g,17,40,133
+60,FMCG / Provisions,Peak Milk 400g,22,40,128
+61,FMCG / Provisions,Peak Milk 400g,24,40,126
+62,FMCG / Provisions,Peak Milk 400g,27,40,123
+63,FMCG / Provisions,Peak Milk 400g,30,40,120
+64,FMCG / Provisions,Peak Milk 400g,32,40,118
+65,FMCG / Provisions,Three Crowns 380g,1,40,149
+66,FMCG / Provisions,Three Crowns 380g,2,40,148
+67,FMCG / Provisions,Three Crowns 380g,8,40,142
+68,FMCG / Provisions,Three Crowns 380g,11,40,139
+69,FMCG / Provisions,Three Crowns 380g,16,40,134
+70,FMCG / Provisions,Three Crowns 380g,26,40,124
+71,FMCG / Provisions,Three Crowns 380g,29,40,121
+72,FMCG / Provisions,Three Crowns 380g,30,40,120
+73,FMCG / Provisions,Three Crowns 380g,33,40,117
+74,FMCG / Provisions,Three Crowns 380g,37,40,113
+75,Grains & Staples,Dangote Sugar 1kg,0,40,150
+76,Grains & Staples,Dangote Sugar 1kg,2,40,148
+77,Grains & Staples,Dangote Sugar 1kg,4,40,146
+78,Grains & Staples,Dangote Sugar 1kg,6,40,144
+79,Grains & Staples,Dangote Sugar 1kg,9,40,141
+80,Grains & Staples,Dangote Sugar 1kg,11,40,139
+81,Grains & Staples,Dangote Sugar 1kg,14,40,136
+82,Grains & Staples,Dangote Sugar 1kg,16,40,134
+83,Grains & Staples,Dangote Sugar 1kg,17,40,133
+84,Grains & Staples,Dangote Sugar 1kg,22,40,128
+85,Grains & Staples,Dangote Sugar 1kg,28,40,122
+86,Grains & Staples,Dangote Sugar 1kg,31,40,119
+87,Grains & Staples,Dangote Sugar 1kg,36,40,114
+88,Grains & Staples,Dangote Sugar 1kg,38,40,112
+89,Grains & Staples,Golden Penny Spaghetti,4,40,146
+90,Grains & Staples,Golden Penny Spaghetti,11,40,139
+91,Grains & Staples,Golden Penny Spaghetti,13,40,137
+92,Grains & Staples,Golden Penny Spaghetti,14,40,136
+93,Grains & Staples,Golden Penny Spaghetti,21,40,129
+94,Grains & Staples,Golden Penny Spaghetti,26,40,124
+95,Grains & Staples,Golden Penny Spaghetti,28,40,122
+96,Grains & Staples,Golden Penny Spaghetti,30,40,120
+97,Grains & Staples,Golden Penny Spaghetti,32,40,118
+98,Grains & Staples,Golden Penny Spaghetti,40,40,110
+99,Grains & Staples,Honeywell Flour 1kg,1,40,149
+100,Grains & Staples,Honeywell Flour 1kg,2,40,148
+101,Grains & Staples,Honeywell Flour 1kg,4,40,146
+102,Grains & Staples,Honeywell Flour 1kg,5,40,145
+103,Grains & Staples,Honeywell Flour 1kg,18,40,132
+104,Grains & Staples,Honeywell Flour 1kg,21,40,129
+105,Grains & Staples,Honeywell Flour 1kg,27,40,123
+106,Grains & Staples,Honeywell Flour 1kg,28,40,122
+107,Grains & Staples,Honeywell Flour 1kg,29,40,121
+108,Grains & Staples,Honeywell Flour 1kg,36,40,114
+109,Grains & Staples,Mama Gold Rice 10kg,4,40,146
+110,Grains & Staples,Mama Gold Rice 10kg,8,40,142
+111,Grains & Staples,Mama Gold Rice 10kg,10,40,140
+112,Grains & Staples,Mama Gold Rice 10kg,16,40,134
+113,Grains & Staples,Mama Gold Rice 10kg,17,40,133
+114,Grains & Staples,Mama Gold Rice 10kg,23,40,127
+115,Grains & Staples,Mama Gold Rice 10kg,24,40,126
+116,Grains & Staples,Mama Gold Rice 10kg,26,40,124
+117,Grains & Staples,Mama Gold Rice 10kg,33,40,117
+118,Grains & Staples,Mama Gold Rice 10kg,35,40,115
+119,Grains & Staples,Mama Gold Rice 10kg,39,40,111
+120,Grains & Staples,Mama Gold Rice 10kg,40,40,110
+121,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,6,40,144
+122,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,11,40,139
+123,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,16,40,134
+124,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,17,40,133
+125,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,25,40,125
+126,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,27,40,123
+127,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,32,40,118
+128,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,33,40,117
+129,Pharmacy / OTC Drugs,Amoxil 500mg Capsule,39,40,111
+130,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,1,40,149
+131,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,3,40,147
+132,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,7,40,143
+133,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,8,40,142
+134,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,10,40,140
+135,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,15,40,135
+136,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,20,40,130
+137,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,22,40,128
+138,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,23,40,127
+139,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,29,40,121
+140,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,30,40,120
+141,Pharmacy / OTC Drugs,Emzor Paracetamol Pack,31,40,119
+142,Pharmacy / OTC Drugs,Panadol Extra,2,40,148
+143,Pharmacy / OTC Drugs,Panadol Extra,10,40,140
+144,Pharmacy / OTC Drugs,Panadol Extra,11,40,139
+145,Pharmacy / OTC Drugs,Panadol Extra,16,40,134
+146,Pharmacy / OTC Drugs,Panadol Extra,17,40,133
+147,Pharmacy / OTC Drugs,Panadol Extra,29,40,121
+148,Pharmacy / OTC Drugs,Panadol Extra,30,40,120
+149,Pharmacy / OTC Drugs,Panadol Extra,33,40,117
+150,Pharmacy / OTC Drugs,Panadol Extra,34,40,116
+151,Pharmacy / OTC Drugs,Panadol Extra,36,40,114
+152,Pharmacy / OTC Drugs,Panadol Extra,37,40,113
+153,Pharmacy / OTC Drugs,Procold Tablet,0,40,150
+154,Pharmacy / OTC Drugs,Procold Tablet,11,40,139
+155,Pharmacy / OTC Drugs,Procold Tablet,13,40,137
+156,Pharmacy / OTC Drugs,Procold Tablet,15,40,135
+157,Pharmacy / OTC Drugs,Procold Tablet,19,40,131
+158,Pharmacy / OTC Drugs,Procold Tablet,21,40,129
+159,Pharmacy / OTC Drugs,Procold Tablet,23,40,127
+160,Pharmacy / OTC Drugs,Procold Tablet,29,40,121
+161,Pharmacy / OTC Drugs,Procold Tablet,30,40,120
+162,Pharmacy / OTC Drugs,Procold Tablet,31,40,119
+163,Pharmacy / OTC Drugs,Procold Tablet,34,40,116
+164,Pharmacy / OTC Drugs,Procold Tablet,35,40,115
+165,Pharmacy / OTC Drugs,Procold Tablet,38,40,112
+166,Pharmacy / Supplements,Astymin Syrup,0,40,150
+167,Pharmacy / Supplements,Astymin Syrup,1,40,149
+168,Pharmacy / Supplements,Astymin Syrup,4,40,146
+169,Pharmacy / Supplements,Astymin Syrup,10,40,140
+170,Pharmacy / Supplements,Astymin Syrup,23,40,127
+171,Pharmacy / Supplements,Astymin Syrup,25,40,125
+172,Pharmacy / Supplements,Astymin Syrup,29,40,121
+173,Pharmacy / Supplements,Astymin Syrup,31,40,119
+174,Pharmacy / Supplements,Astymin Syrup,32,40,118
+175,Pharmacy / Supplements,Astymin Syrup,36,40,114
+176,Pharmacy / Supplements,Cod Liver Oil Caps,0,40,150
+177,Pharmacy / Supplements,Cod Liver Oil Caps,1,40,149
+178,Pharmacy / Supplements,Cod Liver Oil Caps,2,40,148
+179,Pharmacy / Supplements,Cod Liver Oil Caps,8,40,142
+180,Pharmacy / Supplements,Cod Liver Oil Caps,9,40,141
+181,Pharmacy / Supplements,Cod Liver Oil Caps,14,40,136
+182,Pharmacy / Supplements,Cod Liver Oil Caps,18,40,132
+183,Pharmacy / Supplements,Cod Liver Oil Caps,24,40,126
+184,Pharmacy / Supplements,Cod Liver Oil Caps,32,40,118
+185,Pharmacy / Supplements,Cod Liver Oil Caps,34,40,116
+186,Pharmacy / Supplements,Cod Liver Oil Caps,38,40,112
+187,Pharmacy / Supplements,Cod Liver Oil Caps,39,40,111
+188,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,0,40,150
+189,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,2,40,148
+190,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,3,40,147
+191,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,22,40,128
+192,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,27,40,123
+193,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,28,40,122
+194,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,29,40,121
+195,Pharmacy / Supplements,Nature Field Vitamin C 1000mg,34,40,116
+196,Pharmacy / Supplements,Wellman Premium,0,40,150
+197,Pharmacy / Supplements,Wellman Premium,3,40,147
+198,Pharmacy / Supplements,Wellman Premium,4,40,146
+199,Pharmacy / Supplements,Wellman Premium,5,40,145
+200,Pharmacy / Supplements,Wellman Premium,6,40,144
+201,Pharmacy / Supplements,Wellman Premium,11,40,139
+202,Pharmacy / Supplements,Wellman Premium,12,40,138
+203,Pharmacy / Supplements,Wellman Premium,16,40,134
+204,Pharmacy / Supplements,Wellman Premium,19,40,131
+205,Pharmacy / Supplements,Wellman Premium,22,40,128
+206,Pharmacy / Supplements,Wellman Premium,26,40,124
+207,Pharmacy / Supplements,Wellman Premium,30,40,120
+208,Pharmacy / Supplements,Wellman Premium,34,40,116
+209,Toiletries & Homecare,Ariel Detergent 400g,2,40,148
+210,Toiletries & Homecare,Ariel Detergent 400g,4,40,146
+211,Toiletries & Homecare,Ariel Detergent 400g,5,40,145
+212,Toiletries & Homecare,Ariel Detergent 400g,15,40,135
+213,Toiletries & Homecare,Ariel Detergent 400g,26,40,124
+214,Toiletries & Homecare,Ariel Detergent 400g,27,40,123
+215,Toiletries & Homecare,Ariel Detergent 400g,33,40,117
+216,Toiletries & Homecare,Ariel Detergent 400g,39,40,111
+217,Toiletries & Homecare,Dettol Soap Cool,1,40,149
+218,Toiletries & Homecare,Dettol Soap Cool,5,40,145
+219,Toiletries & Homecare,Dettol Soap Cool,7,40,143
+220,Toiletries & Homecare,Dettol Soap Cool,8,40,142
+221,Toiletries & Homecare,Dettol Soap Cool,12,40,138
+222,Toiletries & Homecare,Dettol Soap Cool,13,40,137
+223,Toiletries & Homecare,Dettol Soap Cool,22,40,128
+224,Toiletries & Homecare,Dettol Soap Cool,24,40,126
+225,Toiletries & Homecare,Dettol Soap Cool,28,40,122
+226,Toiletries & Homecare,Dettol Soap Cool,33,40,117
+227,Toiletries & Homecare,Dettol Soap Cool,34,40,116
+228,Toiletries & Homecare,Dettol Soap Cool,36,40,114
+229,Toiletries & Homecare,Hypo Bleach Super,3,40,147
+230,Toiletries & Homecare,Hypo Bleach Super,4,40,146
+231,Toiletries & Homecare,Hypo Bleach Super,8,40,142
+232,Toiletries & Homecare,Hypo Bleach Super,12,40,138
+233,Toiletries & Homecare,Hypo Bleach Super,17,40,133
+234,Toiletries & Homecare,Hypo Bleach Super,18,40,132
+235,Toiletries & Homecare,Hypo Bleach Super,22,40,128
+236,Toiletries & Homecare,Hypo Bleach Super,23,40,127
+237,Toiletries & Homecare,Hypo Bleach Super,28,40,122
+238,Toiletries & Homecare,Hypo Bleach Super,34,40,116
+239,Toiletries & Homecare,Hypo Bleach Super,37,40,113
+240,Toiletries & Homecare,Hypo Bleach Super,40,40,110
+241,Toiletries & Homecare,Sunlight Dishwash,0,40,150
+242,Toiletries & Homecare,Sunlight Dishwash,4,40,146
+243,Toiletries & Homecare,Sunlight Dishwash,9,40,141
+244,Toiletries & Homecare,Sunlight Dishwash,12,40,138
+245,Toiletries & Homecare,Sunlight Dishwash,13,40,137
+246,Toiletries & Homecare,Sunlight Dishwash,15,40,135
+247,Toiletries & Homecare,Sunlight Dishwash,17,40,133
+248,Toiletries & Homecare,Sunlight Dishwash,18,40,132
+249,Toiletries & Homecare,Sunlight Dishwash,22,40,128
+250,Toiletries & Homecare,Sunlight Dishwash,23,40,127
+251,Toiletries & Homecare,Sunlight Dishwash,26,40,124
+252,Toiletries & Homecare,Sunlight Dishwash,29,40,121
+253,Toiletries & Homecare,Sunlight Dishwash,30,40,120
+254,Toiletries & Homecare,Sunlight Dishwash,32,40,118
+255,Toiletries & Homecare,Sunlight Dishwash,34,40,116
