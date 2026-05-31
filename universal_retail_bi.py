@@ -97,7 +97,7 @@ def calibrate_and_ingest_dataset(uploaded_file):
                 renamed_map[variation] = core_field
                 break
                 
-    df = df.rename(columns=renamed_map)
+    df = df.rename(columns={col: renamed_map[col] for col in df.columns if col in renamed_map})
     
     # Structural Integrity Safeguards: Automatically handle missing or unmapped columns gracefully
     if 'Product_Name' not in df.columns:
@@ -122,11 +122,23 @@ def calibrate_and_ingest_dataset(uploaded_file):
     if 'Cost_Price' not in df.columns or 'Selling_Price' not in df.columns:
         np.random.seed(42)
         df['Cost_Price'] = np.random.uniform(800, 6500, size=len(df)).round(2)
-        # Apply strict professional margin scaling: 25%-45% for Pharmacy, 10%-22% for FMCG/Groceries
-        df['Selling_Price'] = df.apply(
-            lambda row: round(row['Cost_Price'] * np.random.uniform(1.25, 1.45), 2) if 'Pharma' in str(row['Category']) 
-            else round(row['Cost_Price'] * np.random.uniform(1.10, 1.22), 2), axis=1
-        )
+        
+        # --- HYBRID REVENUE DEPLOYMENT LOGIC MATRIX ---
+        # Apply strict professional margin scaling: 
+        # 1. 25%-45% for Specialized Pharmacy
+        # 2. 40%-60% for Perishable Eatery / QSR / Restaurant operations
+        # 3. 10%-22% for FMCG/Groceries fast-turnover staples
+        def determine_selling_price(row):
+            cat_str = str(row['Category']).lower()
+            cost = row['Cost_Price']
+            if 'pharma' in cat_str or 'med' in cat_str or 'drug' in cat_str:
+                return round(cost * np.random.uniform(1.25, 1.45), 2)
+            elif any(kw in cat_str for kw in ['eatery', 'food', 'restaurant', 'kitchen', 'qsr', 'cooked', 'meal', 'fastfood', 'kfc']):
+                return round(cost * np.random.uniform(1.40, 1.60), 2)
+            else:
+                return round(cost * np.random.uniform(1.10, 1.22), 2)
+                
+        df['Selling_Price'] = df.apply(determine_selling_price, axis=1)
         
     # Reconcile transactional sales statistics smoothly
     if 'Quantity_Sold' not in df.columns:
@@ -226,7 +238,9 @@ if uploaded_file is not None:
             
             with graph_left:
                 st.subheader("Revenue Velocity vs Net Gross Margin Trend")
-                df_clean['Timestamp'] = pd.to_datetime(df_clean['Timestamp'] if 'Timestamp' in df_clean.columns else pd.date_range(start='2026-05-01', periods=len(df_clean)))
+                if 'Timestamp' not in df_clean.columns:
+                    df_clean['Timestamp'] = pd.date_range(start='2026-05-01', periods=len(df_clean))
+                df_clean['Timestamp'] = pd.to_datetime(df_clean['Timestamp'])
                 timeline_data = df_clean.groupby(df_clean['Timestamp'].dt.date)[['Revenue', 'Gross_Profit']].sum().reset_index()
                 
                 fig_trend = px.line(
